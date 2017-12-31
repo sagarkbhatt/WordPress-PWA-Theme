@@ -1,0 +1,14 @@
+# IDE related files
+.idea
+
+#node module
+node_modules
+
+#ignore logs
+debug.log
+.DS_Store
+
+#sass cache
+.sass-cache
+
+.DS_Store
