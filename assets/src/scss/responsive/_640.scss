@@ -1,0 +1,17 @@
+@media only screen and (max-width: 640px) {
+	//Fix of admin bar due to mmenu
+	html.mm-blocking {
+		/* stylelint-disable-next-line declaration-no-important */
+		margin-top: 0 !important;
+
+		// stylelint-disable selector-max-specificity
+		#wpadminbar {
+			z-index: -1;
+		}
+		// stylelint-enable selector-max-specificity
+
+		.logged-in.admin-bar {
+			margin-top: 46px;
+		}
+	}
+}
