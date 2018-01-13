@@ -13,15 +13,25 @@ $current_theme = wp_get_theme( 'blank-theme' );
 if ( $current_theme->exists() ) {
 	$theme_version = $current_theme->get( 'Version' );
 }
+
 if ( ! defined( 'BLANK_THEME_VERSION' ) ) {
 	define( 'BLANK_THEME_VERSION', $theme_version );
 }
+
 if ( ! defined( 'BLANK_THEME_TEMP_URI' ) ) {
 	define( 'BLANK_THEME_TEMP_URI', get_template_directory_uri() );
 }
+
+if ( ! defined( 'BLANK_THEME_PATH' ) ) {
+	define( 'BLANK_THEME_PATH', get_stylesheet_directory() );
+}
+
 if ( ! defined( 'BLANK_THEME_JS_URI' ) ) {
 	define( 'BLANK_THEME_JS_URI', BLANK_THEME_TEMP_URI . '/js' );
 }
+
+// Import autoloader
+require_once 'autoloader.php';
 
 if ( ! function_exists( 'blank_theme_setup' ) ) :
 	/**
@@ -32,7 +42,10 @@ if ( ! function_exists( 'blank_theme_setup' ) ) :
 	 * as indicating support for post thumbnails.
 	 */
 	function blank_theme_setup() {
-		/*
+
+		require_once BLANK_THEME_PATH . '/inc/classes/class-blank-theme.php';
+
+		/**
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
 		 * If you're building a theme based on Blank Theme , use a find and replace
@@ -129,33 +142,6 @@ function blank_theme_widgets_init() {
 }
 add_action( 'widgets_init', 'blank_theme_widgets_init' );
 
-/**
- * Enqueue scripts and styles.
- */
-function blank_theme_scripts() {
-	wp_enqueue_style( 'blank-theme-style', get_stylesheet_uri() );
-
-	if ( defined( 'BLANK_THEME_IS_DEV' ) && BLANK_THEME_IS_DEV ) {
-
-		wp_enqueue_script( 'blank-theme-navigation', BLANK_THEME_JS_URI . '/vendor/navigation.js', array(), BLANK_THEME_VERSION, true );
-
-		wp_enqueue_script( 'blank-theme-skip-link-focus-fix', BLANK_THEME_JS_URI . '/vendor/skip-link-focus-fix.js', array(), BLANK_THEME_VERSION, true );
-
-		wp_enqueue_script( 'blank-theme-base', BLANK_THEME_JS_URI . '/main.js', array(), BLANK_THEME_VERSION, true );
-
-	} else {
-
-		wp_enqueue_script( 'blank-theme-vendor', BLANK_THEME_JS_URI . '/vendor.min.js', array(), BLANK_THEME_VERSION, true );
-
-		wp_enqueue_script( 'blank-theme-base-prod', BLANK_THEME_JS_URI . '/main.min.js', array(), BLANK_THEME_VERSION, true );
-
-	}
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-}
-add_action( 'wp_enqueue_scripts', 'blank_theme_scripts' );
 
 /**
  * Implement the Custom Header feature.

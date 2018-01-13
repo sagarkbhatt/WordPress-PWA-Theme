@@ -1,0 +1,116 @@
+/*!
+Theme Name: Blank Theme
+Theme URI: http://underscores.me/
+Author: rtcamp
+Author URI: https://rtcamp.com/
+Description: Blank Theme - WordPress Theme
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: blank-theme
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Blank Theme is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Forms
+# Navigation
+	## Links
+	## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+    ## Posts and pages
+	## Asides
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+--------------------------------------------------------------*/
+
+@import "foundation-sites";
+@import "mixins";
+@import "placeholders";
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+@import "normalize";
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+@import "typography";
+
+/*--------------------------------------------------------------
+# Common Classes
+--------------------------------------------------------------*/
+
+@import "common-classes";
+@import "animations";
+
+/*--------------------------------------------------------------
+# Wordpress Classes
+--------------------------------------------------------------*/
+@import "wp_css";
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+@import "elements";
+
+/*--------------------------------------------------------------
+# Site Layout
+--------------------------------------------------------------*/
+@import "site_layout";
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+@import "menus";
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+@import "header";
+
+/*--------------------------------------------------------------
+## Posts and pages
+--------------------------------------------------------------*/
+@import "posts-and-pages";
+
+/*--------------------------------------------------------------
+## Widgets
+--------------------------------------------------------------*/
+@import "widgets";
+
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+@import "comments";
+
+/*--------------------------------------------------------------
+## Foooter
+--------------------------------------------------------------*/
+@import "footer";
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+@import "responsive/responsive";
