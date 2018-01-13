@@ -1,14 +1,14 @@
-# <!=Copyright (C) 2017 rtcamp
+# <!=Copyright (C) 2018 rtcamp
 # This file is distributed under the GNU General Public License v2 or later.=!>
 msgid ""
 msgstr ""
 "Project-Id-Version: Blank Theme 1.0.0\n"
 "Report-Msgid-Bugs-To: http://community.rtcamp.com/c/premium-themes\n"
-"POT-Creation-Date: 2017-12-31 17:48:53+00:00\n"
+"POT-Creation-Date: 2018-01-13 12:34:28+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2018-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Company <support@rtcamp.com>\n"
 "Language-Team: Team <support@rtcamp.com>\n"
 "Language: en\n"
@@ -66,15 +66,15 @@ msgstr ""
 msgid "Theme: %1$s by %2$s."
 msgstr ""
 
-#: functions.php:63
+#: functions.php:76
 msgid "Primary"
 msgstr ""
 
-#: functions.php:121
+#: functions.php:134
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:123
+#: functions.php:136
 msgid "Add widgets here."
 msgstr ""
 
