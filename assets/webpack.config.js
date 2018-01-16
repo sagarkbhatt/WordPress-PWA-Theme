@@ -16,6 +16,10 @@ const CONFIG_DIR = path.resolve(__dirname, 'config');
 const SRC_DIR = path.resolve(__dirname, 'src');
 const BUILD_DIR = path.resolve(__dirname, 'build');
 
+/**
+ * Uglify JS Plugin.
+ */
+const UglifyJS = require('uglify-js');
 
 /**
  * Clean webpack plugin, To cleanup directory.
@@ -70,15 +74,15 @@ const styleLintOptions = {
  */
 const copyWebpackPlugin = require('copy-webpack-plugin');
 const copyWebpackConfig = [
-//	{
-//		context: 'src/js/vendor',
-//		from: '**/*',
-//		to: BUILD_DIR + '/js/vendor',
-//		transform: function(content, path) {
-//			const result = UglifyJS.minify(content.toString());			
-//			return new Buffer(result.code);
-//		}
-// 	}
+	{
+		context: 'src/js/vendor',
+		from: '**/*',
+		to: BUILD_DIR + '/js/vendor',
+		transform: function(content, path) {
+			const result = UglifyJS.minify(content.toString());			
+			return new Buffer(result.code);
+		}
+ 	}
 ];
 
 /**

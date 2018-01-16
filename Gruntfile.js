@@ -7,10 +7,6 @@ module.exports = function( grunt ) {
 	grunt.initConfig( {
 		// Watch for changes and trigger sass, jshint, uglify and livereload
 		watch: {
-			sass: {
-				files: [ 'sass/**/*.{scss,sass}' ],
-				tasks: [ 'sass', 'autoprefixer', 'cmq' ]
-			},
 			 Js: {
 			 	files: [ '<%= uglify.vendor.src %>', '<%= uglify.main.src %>' ],
 			 	tasks: [ 'uglify' ]
@@ -21,38 +17,6 @@ module.exports = function( grunt ) {
 				options: { livereload: true },
 				files: [ '*.php', '*.css', '*.js' ]
 			}
-		},
-		// Compile Sass to CSS
-		// Ref. https://www.npmjs.com/package/grunt-contrib-sass
-		sass: {
-			expanded: {
-						options: {
-							style: 'expanded', // Nested / compact / compressed / expanded
-							sourcemap: 'auto' // Auto / file / inline / none
-						},
-						files: {
-							'style-expanded.css': 'sass/style.scss' // 'destination': 'source'
-						}
-					  },
-			minify: {
-						options: {
-							style: 'nested', // Nested / compact / compressed / expanded
-							sourcemap: 'auto' // Auto / file / inline / none
-						},
-						files: {
-							'style.css': 'sass/style.scss' // 'destination': 'source'
-						}
-					},
-			editor: {
-						options: {
-							style: 'compressed', // Nested / compact / compressed / expanded
-							sourcemap: 'auto' // Auto / file / inline / none
-						},
-						files: {
-							'editor-style.css': 'sass/editor-style.scss' // 'destination': 'source'
-						}
-					}
-
 		},
 		// Autoprefixer
 		autoprefixer: {
@@ -118,7 +82,7 @@ module.exports = function( grunt ) {
 			options: {
 				//I18nToolsPath: '', // Path to the i18n tools directory.
 				textdomain: 'blank-theme', // Project text domain.
-				updateDomains: [ 'buddypress', 'textdomain' ]  // List of text domains to replace.
+				updateDomains: [ 'textdomain' ]  // List of text domains to replace.
 			},
 			target: {
 				files: {
@@ -183,5 +147,5 @@ module.exports = function( grunt ) {
 	} );
 
 	// Register task
-	grunt.registerTask( 'default', [ 'sass', 'autoprefixer', 'checktextdomain', 'makepot', 'watch' ] );
+	grunt.registerTask( 'default', [ 'autoprefixer', 'checktextdomain', 'makepot', 'watch' ] );
 };
